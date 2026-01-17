@@ -3,7 +3,6 @@ import models
 from sklearn.metrics import accuracy_score
 import pandas as pd
 
-# Access dictionary inside models.py
 results = pd.DataFrame(
     index=models.models.keys(),
     columns=s.sampling_methods.keys()
@@ -29,3 +28,4 @@ for model in results.index:
     best_sampling = results.loc[model].astype(float).idxmax()
     best_accuracy = results.loc[model].astype(float).max()
     print(f"{model} → {best_sampling} ({best_accuracy}%)")
+
